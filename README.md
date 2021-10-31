@@ -1,7 +1,10 @@
 # Fundamentos de Desenvolvimento Java
 ## TP1
 ### Aluno: André Palhares
-### Instituto Infnet
+### Instituicão: Instituto Infnet
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Escopo da tarefa
 Você deve construir um programa simples para o controle acadêmico de uma instituição de ensino, muito parecido com o que você começou a construir durante as etapas 1 e 2 da disciplina.
