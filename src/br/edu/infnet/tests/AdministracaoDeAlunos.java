@@ -1,8 +1,8 @@
-package br.edu.infnet;
+package br.edu.infnet.tests;
 
 import java.util.Scanner;
 
-public class StudentManagement {
+public class AdministracaoDeAlunos {
 
     // #region
     private static String[] students;
@@ -16,7 +16,7 @@ public class StudentManagement {
         System.out.println("[2] Consultar boletim de um aluno");
         System.out.println("[3] Consultar notas da turma");
         System.out.println("[4] Sair");
-        System.out.print("Selecione uma opção: ");
+        System.out.print("Selecione uma operacao: ");
     }
 
     private static void printSeparator() {
@@ -27,7 +27,7 @@ public class StudentManagement {
         float mean = (avOne[code] + avTwo[code]) / 2;
         String situation = calcStudentSituation(mean);
         System.out.printf(
-                " Aluno: %s%n Nota da AV1: %s%n Nota da AV2 %s%n Média Final %s%n Situação %s%n",
+                " Aluno: %s%n Nota da AV1: %s%n Nota da AV2 %s%n Media Final %s%n Situacao %s%n",
                 students[code],
                 avOne[code],
                 avTwo[code],
@@ -53,12 +53,12 @@ public class StudentManagement {
 
     private static void displayStudentInfoById() {
         printSeparator();
-        System.out.print("Digite o código do aluno para realizar a consulta: ");
+        System.out.print("Digite o codigo do aluno para realizar a consulta: ");
         int code = inScanner.nextInt();
         if (students[code] != null)
             printStudentDetails(code);
         else {
-            System.out.println("Não foi possível encontrar um aluno com esse código, tente outra vez");
+            System.out.println("Nao foi possivel encontrar um aluno com esse codigo, tente outra vez");
             displayStudentInfoById();
         }
     }
@@ -90,43 +90,43 @@ public class StudentManagement {
         avTwo = new float[MAX_QUANTITY];
 
         int quantity = 0;
-        String opt;
+        int opt;
 
         do {
             showOptions();
-            opt = inScanner.next();
+            opt = inScanner.nextInt();
 
             switch (opt) {
 
-                case "1":
+                case 1:
                     if (quantity < MAX_QUANTITY) {
                         registerStudent(quantity);
                         quantity++;
                     } else {
                         printSeparator();
-                        System.out.println("Não é possivel adicionar mais alunos");
+                        System.out.println("Nao e possivel adicionar mais alunos");
                         printSeparator();
                     }
                     break;
-                case "2":
+                case 2:
                     displayStudentInfoById();
                     break;
-                case "3":
+                case 3:
                     listStudents();
                     break;
-                case "4":
+                case 4:
                     System.out.println("Saindo...");
                     break;
                 default:
-                    System.out.println("Operação inválida.");
+                    System.out.println("Operacao invalida.");
                     printSeparator();
                     break;
             }
 
 
-        } while(opt != "4");
+        } while(opt != 4);
 
-        System.out.println("Finalizando operação!!");
+        System.out.println("Finalizando operacao!!");
         inScanner.close();
     }
 }
