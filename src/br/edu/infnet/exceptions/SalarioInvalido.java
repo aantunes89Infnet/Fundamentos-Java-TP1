@@ -1,11 +1,10 @@
 package br.edu.infnet.exceptions;
 
-public class NotaNaoPreenchida extends Exception{
+public class SalarioInvalido extends Exception{
 
     private static final long serialVersionUID = 1L;
 
-    public NotaNaoPreenchida(String msg) {
+    public SalarioInvalido(String msg) {
         super(msg);
     }
-
 }

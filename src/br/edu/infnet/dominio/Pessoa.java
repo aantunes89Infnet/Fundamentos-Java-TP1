@@ -1,62 +1,68 @@
 package br.edu.infnet.dominio;
 
+import br.edu.infnet.exceptions.NomeInvalido;
+
 public class Pessoa {
 
     private String nome;
-    private int idade;
-    private String instituicao;
-    private String situacao;
+    private String sobreNome;
+    private String ultimoNome;
+    private String cargo;
 
     public Pessoa() {
-        setNome("Pessoa");
-        setIdade(10);
+        this.nome = "Fulano";
+        setCargo("Indefinido");
     }
 
-    public Pessoa(String nome, int idade) {
+
+    public Pessoa(String cargo) {
         this();
-        setNome(nome);
-        setIdade(idade);
-    }
-
-    public Pessoa(String nome, int idade, String instituicao) {
-        this(nome, idade);
-        setInstituicao(instituicao);
+        setCargo(cargo);
     }
 
 
-    protected String consultarSituacao() {
-        return getNome() + " " + getIdade() + " " + getInstituicao();
+    public void consultarSituacao() {
+        System.out.println("-------------------------------------------");
+        System.out.println("CARGO: " + getCargo());
+        System.out.println("NOME: " + getNome());
+        System.out.println("SOBRENOME: " + getSobreNome());
+        System.out.println("ULTIMO NOME: " + getUltimoNome());
+    };
+
+    @Override
+    public String toString() {
+        return "Nome" + getNome() + ", cargo:" + getCargo();
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome) throws NomeInvalido {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public String getCargo() {
+        return cargo;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
-    public String getInstituicao() {
-        return instituicao;
+    public String getUltimoNome() {
+        return ultimoNome;
     }
 
-    public void setInstituicao(String instituicao) {
-        this.instituicao = instituicao;
+    public void setUltimoNome(String ultimoNome) {
+        this.ultimoNome = ultimoNome;
     }
 
-    public String getSituacao() {
-        return situacao;
+    public String getSobreNome() {
+        return sobreNome;
     }
 
-    public void setSituacao(String situacao) {
-        this.situacao = situacao;
+    public void setSobreNome(String sobreNome) {
+        this.sobreNome = sobreNome;
     }
 }
