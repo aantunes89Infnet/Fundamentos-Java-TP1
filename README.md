@@ -1,5 +1,7 @@
 # Fundamentos de Desenvolvimento Java
 
+## O nome do repositorio esta como TP1, mas conforme orientação, e por conta do escopo do trabalho, aqui estão TP3 e TP1.
+
 ## TP3
 ### Aluno: André Palhares
 ### Instituicão: Instituto Infnet
