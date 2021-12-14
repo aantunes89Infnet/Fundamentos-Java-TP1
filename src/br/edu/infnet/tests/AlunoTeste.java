@@ -11,7 +11,7 @@ public class AlunoTeste {
 
         Aluno a1 = new Aluno();
         try {
-            a1.setNome("Andre Palhares Antunes");
+            a1.setNome("Andre da Costa Palhares Antunes");
             a1.setAv1(10);
             a1.setAv2(9);
             a1.setCargo("Aluno de Vestibular");
@@ -25,16 +25,17 @@ public class AlunoTeste {
             a2.setCargo("Aluno do terceiro ano");
             a2.consultarSituacao();
         } catch (NomeInvalido e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         try {
-            Aluno a3 = new Aluno("Alex Roberto Rockenbach");
+            Aluno a3 = new Aluno();
+            a3.setNome(null);
             a3.setAv1(8);
             a3.setAv2(10);
             a3.consultarSituacao();
-        } catch (NomeInvalido | NotaInvalida e) {
-            e.printStackTrace();
+        } catch (NotaInvalida | NomeInvalido e) {
+            System.out.println(e.getMessage());
         }
     }
 }

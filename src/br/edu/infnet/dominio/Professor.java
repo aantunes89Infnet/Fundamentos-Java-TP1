@@ -10,13 +10,12 @@ public class Professor extends Pessoa {
     private String disciplina;
 
     public Professor() {
-        super(Constante.PROFESSOR);
+        super("Fulano", Constante.PROFESSOR);
     }
 
-    public Professor(String nome, float salario, String disciplina) throws NomeInvalido {
-        super(Constante.PROFESSOR);
+    public Professor(String nome, float salario, String disciplina) throws NomeInvalido, SalarioInvalido {
         this.setNome(nome);
-        this.salario = salario;
+        this.setSalario(salario);
         this.disciplina = disciplina;
     }
 
@@ -43,6 +42,11 @@ public class Professor extends Pessoa {
 
     @Override
     public void setNome(String nome) throws NomeInvalido {
+
+        if(nome == null) {
+            throw new NomeInvalido("Nome invalido, por favor forneca nome sobrenome e ultimo nome");
+        }
+
         String[] nomeSeparado = nome.split("\\s");
 
         if (nomeSeparado.length < 3) {

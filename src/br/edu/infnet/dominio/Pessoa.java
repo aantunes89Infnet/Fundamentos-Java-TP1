@@ -11,15 +11,15 @@ public class Pessoa {
 
     public Pessoa() {
         this.nome = "Fulano";
-        setCargo("Indefinido");
+        this.cargo = "Indefinido";
     }
 
 
-    public Pessoa(String cargo) {
+    public Pessoa(String nome, String cargo) {
         this();
-        setCargo(cargo);
+        this.nome = nome;
+        this.cargo = cargo;
     }
-
 
     public void consultarSituacao() {
         System.out.println("-------------------------------------------");

@@ -10,18 +10,18 @@ public class Aluno extends Pessoa {
 	private float av2;
 	private float media;
 
-	
+
 	public Aluno() {
-		super(Constante.ALUNO);
+		super("Beltrano", Constante.ALUNO);
 	}
 
 	public Aluno(String nome) throws NomeInvalido {
-		super(Constante.ALUNO);
+		super(nome, Constante.ALUNO);
 		setNome(nome);
 	}
 
 	public Aluno(String nome, float av1, float av2) throws NomeInvalido {
-		super(Constante.ALUNO);
+		super(nome, Constante.ALUNO);
 		this.setNome(nome);
 		this.av1 = av1;
 		this.av2 = av2;
@@ -56,7 +56,15 @@ public class Aluno extends Pessoa {
 	}
 
 	@Override
+	public String getNome() {
+		return super.getNome();
+	}
+
+	@Override
 	public void setNome(String nome) throws NomeInvalido {
+		if(nome == null)
+			throw new NomeInvalido("Nome invalido, por favor forneca nome sobrenome e ultimo nome");
+
 		int posInit = nome.indexOf(" ");
 		int posEnd = nome.lastIndexOf(" ");
 
@@ -65,8 +73,8 @@ public class Aluno extends Pessoa {
 			throw new NomeInvalido("Nome invalido, por favor forneca nome sobrenome e ultimo nome");
 
 		super.setNome(nome.substring(0, posInit));
-		super.setSobreNome(nome.substring(posInit, posEnd));
-		super.setUltimoNome(nome.substring(posEnd));
+		super.setSobreNome(nome.substring(posInit, posEnd).trim());
+		super.setUltimoNome(nome.substring(posEnd).trim());
 	}
 
 	public void setAv1(float av1) throws NotaInvalida {
