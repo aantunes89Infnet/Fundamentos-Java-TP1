@@ -2,7 +2,7 @@ package br.edu.infnet.tests;
 
 import java.util.Scanner;
 
-public class AdministracaoDeAlunos {
+public class AdministracaoDeAlunosTP1 {
 
     // #region
     private static String[] students;

@@ -12,7 +12,7 @@ import br.edu.infnet.exceptions.SalarioInvalido;
 import java.util.Scanner;
 
 
-public class InstitutionManager {
+public class InstitutionManagerTP3 {
 
     private static Pessoa[] pessoas;
 
